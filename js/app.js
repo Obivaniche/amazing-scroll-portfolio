@@ -10,3 +10,16 @@ document.querySelectorAll('.slider').forEach((n, i) => {
 });
 
 bindSwipers(slider1, slider2, slider3, slider4);
+
+document.querySelectorAll('.slider__item').forEach(item => {
+	item.addEventListener('click', event => {
+		if (item.classList.toggle('opened')) {
+			document.addEventListener('click', (e) => {
+				const withinBoundaries = e.composedPath().includes(item);
+				if (!withinBoundaries) {
+					item.classList.remove('opened');
+				}
+			})
+		}
+	})
+});

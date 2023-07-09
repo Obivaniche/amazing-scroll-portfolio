@@ -44,10 +44,15 @@ html, body {
 	transition: transform var(--transition);
 	will-change: transform;
 	box-shadow: rgb(0 0 0 / .15) 0 0 30px 10px;
+	border-radius: 10px;
 }
 
 .slider__item:hover {
 	transform: scale(1.15);
+}
+
+.slider__item.opened {
+	transform: rotate(-12deg) scale(1.4);
 }
 
 .slider__img {
